@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
-        gameBeginingView();
+        gameBeginningView();
         setArrowButtonListener();
         handler.postDelayed(runnable,0);
     }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 }
 
     // set the view in the beginning of the game
-    private void gameBeginingView(){
+    private void gameBeginningView(){
         main_IMG_player[0].setVisibility(View.INVISIBLE);// hide left player icon
         main_IMG_player[2].setVisibility(View.INVISIBLE);// hide right player icon
         //hide obstacles
