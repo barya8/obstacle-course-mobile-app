@@ -12,18 +12,19 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.hw1.Logic.GameManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class MainActivity extends AppCompatActivity {
-    private int life=3;
-    private int errors=0;
+    private int life=3;//sets the number of strikes
+    private int errors=0;// set the default current number of errors
     private MaterialButton[] main_BTN_arrows;
     private ShapeableImageView[] main_IMG_hearts;
     private ShapeableImageView[] main_IMG_player;
     private ShapeableImageView[][] main_IMG_obstacle;
     private final Handler handler = new Handler();
+
+    //the runnable is responsible for the movement of the obstacles to the player
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
@@ -33,23 +34,20 @@ public class MainActivity extends AppCompatActivity {
                 nextStep();
                 errorHandler();
             }
-            else{
+            else{ //open game over screen
                 finish();
                 openGameOverScreen("Game Over");
             }
         }
     };
 
-    private GameManager gameManager;
-
+    //main
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
         gameBeginingView();
-//        gameManager = new GameManager(main_IMG_hearts.length);
-//        refreshUI();
         setArrowButtonListener();
         handler.postDelayed(runnable,0);
     }
@@ -96,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         };
 }
 
-    // set the view in the begining of the game
+    // set the view in the beginning of the game
     private void gameBeginingView(){
         main_IMG_player[0].setVisibility(View.INVISIBLE);// hide left player icon
         main_IMG_player[2].setVisibility(View.INVISIBLE);// hide right player icon
@@ -114,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             mb.setOnClickListener(v -> clicked(mb.getId()));
     }
 
-    //update visiblity of player after clicking
+    //update visibility of player after clicking the arrow
     private void clicked(int selectedButton) {
         int index=999;//default
         for (int i = 0; i < main_IMG_player.length; i++)
@@ -141,13 +139,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //add new obstacle
+    //add new obstacle to the game in the last row
     private void newObstacle(){
         int col=(int) (Math.random()*3);
         main_IMG_obstacle[0][col].setVisibility(View.VISIBLE);
     }
 
-    //the icon go down to next row
+    //the movement of the obstacles icons to the next row
     private void nextStep(){
         for (int i = main_IMG_obstacle.length-1; i >0; i--) {
             for (int j = 0; j < main_IMG_obstacle[i].length; j++) {
@@ -163,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //handle error- vibrate, toast, remove heart
+    //handle error- vibrate, toast, remove heart icon
     private void errorHandler(){
         for (int i = 0; i < main_IMG_player.length; i++) {
             if (main_IMG_player[i].getVisibility()==View.VISIBLE) {
@@ -185,6 +183,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    //open game over screen
     private void openGameOverScreen(String status) {
         Intent intent = new Intent(this,GameOverActivity.class);
         intent.putExtra(GameOverActivity.KEY_STATUS,status);
