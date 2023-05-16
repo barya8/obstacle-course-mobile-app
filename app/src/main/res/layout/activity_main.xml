@@ -39,8 +39,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:src="@drawable/ic_icon_heart"
             app:srcCompat="@drawable/ic_icon_heart" />
     </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="000"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/main_LAYOUT_obstacles"
@@ -52,190 +66,264 @@
         android:layout_marginStart="64dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/main_LAYOUT_obstacle1"
-            android:layout_width="match_parent"
+
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_obstacle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_LAYOUT_obstacle2"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle1_left"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/main_LAYOUT_obstacle2"
-            android:layout_marginBottom="16dp">
+            android:layout_weight="1"
+            android:src="@drawable/ic_icon_football_defender" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle1_left"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle1_center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle1_right"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/main_LAYOUT_obstacle2"
-            android:layout_width="match_parent"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle1_left_center"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/main_LAYOUT_obstacle3"
-            android:layout_marginBottom="16dp">
+            android:layout_weight="1"
+            android:src="@drawable/ic_icon_football_defender" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle2_left"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle2_center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle2_right"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/main_LAYOUT_obstacle3"
-            android:layout_width="match_parent"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle1_center"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/main_LAYOUT_obstacle4"
-            android:layout_marginBottom="16dp">
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle3_left"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle3_center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle3_right"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/main_LAYOUT_obstacle4"
-            android:layout_width="match_parent"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle1_right_center"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/main_LAYOUT_obstacle5"
-            android:layout_marginBottom="16dp">
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle4_left"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle4_center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle4_right"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/main_LAYOUT_obstacle5"
-            android:layout_width="match_parent"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle1_right"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/main_LAYOUT_player"
-            android:layout_marginBottom="16dp">
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+    </LinearLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle5_left"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_obstacle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_LAYOUT_obstacle3"
+        android:layout_marginBottom="24dp">
 
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle2_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle5_center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle2_left_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
 
-            <View
-                android:layout_width="32dp"
-                android:layout_height="0dp" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle2_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/main_IMG_obstacle5_right"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_icon_football_defender" />
-        </LinearLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle2_right_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle2_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_obstacle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_LAYOUT_obstacle4"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle3_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle3_left_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle3_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle3_right_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle3_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_obstacle4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_LAYOUT_obstacle5"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle4_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle4_left_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle4_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle4_right_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle4_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_obstacle5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_LAYOUT_obstacle6"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle5_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle5_left_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle5_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle5_right_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle5_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_obstacle6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_LAYOUT_player"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle6_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle6_left_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle6_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle6_right_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_obstacle6_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_defender" />
+    </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -254,9 +342,12 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_icon_football_player" />
 
-        <View
-            android:layout_width="32dp"
-            android:layout_height="0dp" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_player_left_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_player" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_IMG_player_center"
@@ -265,9 +356,13 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_icon_football_player" />
 
-        <View
-            android:layout_width="32dp"
-            android:layout_height="0dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_player_right_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_icon_football_player" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_IMG_player_right"

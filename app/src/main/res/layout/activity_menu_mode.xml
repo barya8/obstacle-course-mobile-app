@@ -5,42 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_400"
-    tools:context=".GameOverActivity">
+    tools:context=".MenuModeActivity">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/game_over_LBL_go"
+        android:id="@+id/menu_LBL_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_above="@id/main_LAYOUT_options"
-        android:textSize="80sp"
+        android:layout_alignParentTop="true"
+        android:textSize="50sp"
         android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
         android:textAlignment="center"
-        android:text="T"/>
+        android:text="Mode"/>
 
     <LinearLayout
         android:id="@+id/main_LAYOUT_options"
         android:layout_width="wrap_content"
+        android:layout_below="@id/menu_LBL_mode"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp">
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/go_BTN_new_game"
+            android:id="@+id/menu_BTN_buttons"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:backgroundTint="@color/green_800"
-            app:icon="@drawable/ic_icon_restart" />
+            app:icon="@drawable/ic_icon_buttons" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/go_BTN_leaderboard"
+            android:id="@+id/menu_BTN_tilt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="15dp"
             android:layout_weight="1"
             app:backgroundTint="@color/green_800"
-            app:icon="@drawable/ic_icon_leaderboard" />
+            app:icon="@drawable/ic_icon_tilt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_LAYOUT_leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/main_LAYOUT_options">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menu_BTN_leaderboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:backgroundTint="@color/green_800"
+            app:icon="@drawable/ic_icon_leaderboard"/>
     </LinearLayout>
 </RelativeLayout>
